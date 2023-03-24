@@ -69,10 +69,11 @@ export const Todosjson = () => {
                 </lable>
 
                 <lable>
-                    <button>Submit</button>
-                    <button onClick={requestTodos}>View All</button>
+                <button type="submit">Submit</button>
+                <button type="button" onClick={requestTodos}>View All</button>
                 </lable>
             </form>
+            
             <ResultforToDos todos={todos}/>
         </div>
     );
