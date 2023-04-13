@@ -1,8 +1,9 @@
-import {useEffect,useState} from "react";
+import {useEffect,useState,useContext} from "react";
+import { CommentContext } from "./AddContext";
 import { ResultForCommemts } from "./ResultForCommemts";
 import { useIdListForComments } from "./useIdListForComments";
 export const Commentsjson = () => {
-    let [comments,setComments] = useState([]);
+    let [comments,setComments] = useContext(CommentContext);
     let [postId,setPostId] = useState();
     let [id,setId] = useState();
     let [listPostId,setListPostId] = useState([]); 
@@ -69,7 +70,7 @@ export const Commentsjson = () => {
                 </form>
             </div>
 
-        <ResultForCommemts result={comments}/>
+        <ResultForCommemts/>
 
         </div>
 

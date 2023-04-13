@@ -1,5 +1,8 @@
-export const ResultForCommemts = (props) => {
-    const comments = props.result;
+import {useContext} from "react";
+import { CommentContext } from "./AddContext";
+export const ResultForCommemts = () => {
+    const comments = useContext(CommentContext);
+    console.log("comments",comments[0]);
     console.log(comments);
     return (
         <div>
@@ -17,7 +20,7 @@ export const ResultForCommemts = (props) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {comments.map((obj)=> 
+                    {comments[0].map((obj)=> 
                     <tr>
                         <td>{obj.postId}</td>
                         <td>{obj.id}</td>

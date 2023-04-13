@@ -1,5 +1,8 @@
-export const ResultforToDos = (props) => {
-    const todos = props.todos;
+import {useContext} from "react";
+import { TodoContext } from "./AddContext";
+export const ResultforToDos = () => {
+    const todos = useContext(TodoContext);
+    console.log("todos",todos[0]);
     return(
     <div>
         {!todos.length ? 
@@ -15,7 +18,7 @@ export const ResultforToDos = (props) => {
             </tr>
         </thead>
         <tbody>
-            {todos.map((obj) => 
+            {todos[0].map((obj) => 
             <tr>
                 <td>{obj.userId}</td>
                 <td>{obj.id}</td>

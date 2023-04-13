@@ -1,5 +1,8 @@
-export const ResultsForPosts = (props) => {
-    const post = props.post;
+import {useContext} from "react";
+import { PostContext } from "./AddContext";
+export const ResultsForPosts = () => {
+    const post = useContext(PostContext);
+    console.log("post",post[0])
     return(
         <div>
             <table>
@@ -12,7 +15,7 @@ export const ResultsForPosts = (props) => {
                     </tr>
                 </thead>
                 <tbody>
-                  { post.map((post) => 
+                  { post[0].map((post) => 
                     <tr>
                         <td>{post.userId}</td>
                         <td>{post.id}</td>

@@ -1,6 +1,9 @@
-export const ResultsForAlbums = (props) => {
-    const albums = props.albums;
-    console.log(albums);
+import { AlbumContext} from "./AddContext";
+import {useContext} from "react";
+
+export const ResultsForAlbums = () => {
+    const albums = useContext(AlbumContext);
+    console.log("albums",albums[0]);
     return (
         <div>
             {!albums.length ? (
@@ -15,7 +18,7 @@ export const ResultsForAlbums = (props) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {albums.map((obj)=>
+                        {albums[0].map((obj)=>
                         <tr>
                             <td>{obj.userId}</td>
                             <td>{obj.id}</td>

@@ -1,7 +1,8 @@
-import {useEffect,useState} from 'react';
+import {useEffect,useState,useContext} from 'react';
+import { UserContext } from './AddContext';
 import { ResultforUsers } from './ResultForUsers';
 export const Usersjson = () => {
-    let [users,setUsers] = useState([]);
+    let [users,setUsers] = useContext(UserContext);
     async function requestUsers(){
         const res = await fetch(`https://jsonplaceholder.typicode.com/users`);
         const json = await res.json();
@@ -13,7 +14,7 @@ export const Usersjson = () => {
     },[])
     return(
         <div>
-            <ResultforUsers users={users}/>
+            <ResultforUsers/>
         </div>
     );
 }

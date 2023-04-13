@@ -1,9 +1,10 @@
-import {useEffect,useState} from 'react';
+import {useEffect,useState,useContext} from 'react';
+import { AlbumContext } from './AddContext';
 import { ResultsForAlbums } from './ResultsForAlbums';
 import { useIdListForAlbum } from './useIdListForAlbum';
 // let USERID = [1,2,3,4,5,6,7,8,9,10];
 export const Albumjson = () => {
-    let [albums,setAlbums] = useState([]);
+    let [albums,setAlbums] = useContext(AlbumContext);
     let [userid,setUserid] = useState("");
     let [listuserid,setListuserid] = useState([]);
     let [ids,setId] = useState('');
@@ -76,7 +77,7 @@ export const Albumjson = () => {
                 </form>           
             </div>
            
-                <ResultsForAlbums albums={albums}/> 
+                <ResultsForAlbums/> 
 
 
             {/* {!albums.length ?(

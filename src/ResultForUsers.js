@@ -1,5 +1,8 @@
-export const ResultforUsers = (props) => {
-    const users = props.users;
+import {useContext} from "react";
+import { UserContext } from "./AddContext";
+export const ResultforUsers = () => {
+    const users = useContext(UserContext);
+    console.log("users",users[0])
     return(
         <div>
             <table>
@@ -16,7 +19,7 @@ export const ResultforUsers = (props) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {users.map((obj) =>
+                    {users[0].map((obj) =>
                     <tr>
                         <td>{obj.name}</td>
                         <td>{obj.username}</td>

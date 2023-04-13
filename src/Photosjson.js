@@ -1,8 +1,9 @@
-import {useEffect,useState} from 'react';
+import {useEffect,useState,useContext} from 'react';
+import { PhotoContext } from './AddContext';
 import { ResultForPhotos } from './ResultForPhotos';
 import { useIdListforPhotos } from './useIdListForPhotos';
 export const Photosjson = () => {
-    let [photos,setPhotos] = useState([]);
+    let [photos,setPhotos] = useContext(PhotoContext);
     let[albumId,setAlbumId]=useState('');
     let [id,setId] = useState('');
     let [listAlbumId,setListAlbumId] = useState([]);
@@ -69,7 +70,7 @@ export const Photosjson = () => {
                 </form>
             </div>
             
-            <ResultForPhotos photos={photos}/>
+            <ResultForPhotos/>
         </div>
     );
 }

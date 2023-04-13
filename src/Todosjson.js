@@ -1,9 +1,10 @@
-import {useEffect,useState} from 'react';
+import {useEffect,useState,useContext} from 'react';
+import { TodoContext } from './AddContext';
 import { ResultforToDos } from './ResultForToDos';
 import { useIdListforToDos } from './useIdListForToDos';
 export const Todosjson = () => {
     
-    let [todos,setTodos] = useState([]);
+    let [todos,setTodos] = useContext(TodoContext);
     let [listUserId,setListUserId] = useState([]);
     let [userId,setUserId] = useState('');
     let [id,setId] = useState('');
@@ -74,7 +75,7 @@ export const Todosjson = () => {
                 </lable>
             </form>
             
-            <ResultforToDos todos={todos}/>
+            <ResultforToDos/>
         </div>
     );
 }

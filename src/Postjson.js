@@ -1,8 +1,9 @@
-import {useEffect,useState} from 'react';
+import {useEffect,useState,useContext} from 'react';
+import { PostContext } from './AddContext';
 import { ResultsForPosts } from './ResultForPosts';
 import { useIdListForPosts } from './useIdListForPosts';
 export const Postjson = () => {
-    let [post,setPost] = useState([]);
+    let [post,setPost] = useContext(PostContext);
     let [userid,setUserId] = useState('');
     let [id,setId] = useState('');
     let [listUserId,setListuserid] = useState([]);
@@ -69,7 +70,7 @@ export const Postjson = () => {
                     <br/>
                 </form>
             </div>
-            <ResultsForPosts post={post}/>
+            <ResultsForPosts/>
     </div>
     )
 }

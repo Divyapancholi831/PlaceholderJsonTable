@@ -1,5 +1,8 @@
-export const ResultForPhotos = (props) => {
-    const photos = props.photos;
+import { useContext} from "react";
+import { PhotoContext } from "./AddContext";
+export const ResultForPhotos = () => {
+    const photos = useContext(PhotoContext);
+    console.log("photos",photos[0]);
     return (
         <div>
             {!photos.length ? 
@@ -16,7 +19,7 @@ export const ResultForPhotos = (props) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {photos.map((obj)=>
+                    {photos[0].map((obj)=>
                     <tr>
                         <td>{obj.albumId}</td>
                         <td>{obj.id}</td>
